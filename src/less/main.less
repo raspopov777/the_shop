@@ -1,11 +1,296 @@
 @import (less) 'node_modules/normalize.css/normalize.css';
 @import (less) './media';
 
-// Код для примера
-body {
-    background: burlywood;
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #fff;
 }
 
+.wrapper{
+    position: relative;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+/************************ header ***************************/
+.header{
+    //background: #fff;
+    height: 90px;
+
+    &__logo{
+        position: absolute;
+        width: 107px;
+        height: 24px;
+        top: 35px;
+        left: 6.375%;
+    }
+
+    &__oggetto-logo{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 48.4%;
+        top: 20px;
+    }
+
+    &__tel{
+        position: absolute;
+        right: 6.375%;
+        top: 31px;
+        font-family: "Roboto";
+        font-size: 24px;
+        font-weight: bold;
+    }
+     &__link{
+        text-decoration: none;
+        color: #c00;
+    }
+     &__padding-bottom{
+        position: relative;
+        bottom: 6px;
+    }
+}
+/************************ main ***************************/
+/*
+    main
+        menu
+            navigation
+            search-form
+        breadcrumbs
+        product
+            pics
+            info
+*/
+.main{
+    height: 1000px;
+    //background-color: burlywood;
+    position: relative;
+}
+
+.menu{
+    height: 50px;
+    background: #f2f2ed;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d9d9d4;
+}
+.navigation{
+    padding: 0 6.375%;
+    margin-top: 18px;
+
+    &__list{
+        list-style: none;
+    }
+
+    &__item{
+    }
+
+    &__link{
+        float: left;
+        padding-right: 20px;
+        font-family: "Roboto";
+        font-size: 16px;
+        color: #c00;
+
+        &:active {
+            color: #000;  /* Цвет текста при наведении курсора. */
+            text-decoration: none; /* Устранение подчёркивания ссылок. */
+        }
+    }
+}
+
+.search-form{
+    position: absolute;
+    right: 6.375%;
+    top: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(217, 217, 212);
+    background-color: rgb(255, 255, 255);
+    width: 253px;
+    height: 38px;
+
+    &__input{
+        position: absolute;
+        border: none;
+        outline: none;
+        width: 213px;
+        height: 36px;
+        left: 9px;
+        top: 1px;
+    }
+
+    &__image{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        right: 9px;
+        top: 11px;
+        border: none;
+    }
+}
+
+
+.breadcrumbs{
+    //background: beige;
+    padding: 50px 0 20px 6.375%;
+
+    &__list{
+        list-style: none outside none;
+    }
+    &__item{
+        display: inline;
+        &::after{
+            content: " / ";
+        }
+    }
+
+    &__item:last-child {
+
+        &::after{
+            content: " ";
+        }
+    }
+    &__link{
+        font-size: 16px;
+        font-family: "Roboto";
+        color: #c00;
+
+        &:active {
+            color: #000;  /* Цвет текста при наведении курсора. */
+            text-decoration: none; /* Устранение подчёркивания ссылок. */
+        }
+    }
+}
+
+
+.product{
+    position: relative;
+    //padding: 0 102px;
+    padding: 0 6.375%;
+    //background-color: yellow;
+
+    &__pics{
+        position: absolute;
+        width: 43.625%;
+        //width: 50%;
+        background-color: #f2f2ed;
+        @media (max-width: 1000px){
+            position: static;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+    &__pic{
+        width: 100%;
+    }
+    &__info{
+        //max-width: 633px;
+        width: 45.4221%;
+        //margin-left: 763px;
+        margin-left: 54.5779%;
+        //background-color: antiquewhite;
+        @media (max-width: 1000px){
+            position: static;
+            width: inherit;
+            margin: 0;
+        }
+    }
+    &__title{
+        font-size: 36px;
+        font-family: "Roboto";
+        color: #000;
+        font-weight: bold;
+    }
+    &__description{
+        font-size: 16px;
+        font-family: "Roboto";
+        color: #000;
+    }
+    &__price{
+        font-size: 36px;
+        font-family: "Roboto";
+        color: #c00;
+        font-weight: bold;
+    }
+    &__size{
+        font-size: 36px;
+        font-family: "Roboto";
+        background-color: #fff;
+        margin-right: 10px;
+    }
+
+    &__color{
+        margin-right: 10px;
+        display: inline-block;
+        &_white{
+            background-color: #fffafb;
+        }
+        &_yellow{
+            background-color: #e3d95e;
+        }
+        &_green{
+            background-color: #a5af96;
+        }
+    }
+}
+.rectangle{
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;
+    width: 65px;
+    height: 65px;
+    outline: none;
+
+    &:active{
+        border-width: 3px;
+        border-color: #c00;
+    }
+}
+.button-buy{
+    padding: 44px 0;
+
+    &__name{
+        font-size: 30px;
+        font-family: "Roboto";
+    }
+    &__button{
+        width: 202px;
+        height: 79px;
+        border: none;
+        outline: none;
+        background-color: #c00;
+        color: #fff;
+    }
+
+}
+.postpone{
+    //background: darkorange;
+    &__link{
+        font-size: 16px;
+        font-family: "Myriad Pro Regular";
+        color: #999;
+    }
+    &__img{
+        width: 28px;
+        height: 25px;
+        position: relative;
+        bottom: -8px;
+        padding-right: 8px;
+    }
+}
+/************************ footer ***************************/
+.footer{
+    height: 400px;
+    background-color: cadetblue;
+}
+
+
+/*
 .menu {
     margin: 0;
     padding: 0;
@@ -39,4 +324,4 @@ body {
     }
 }
 
-
+*/
