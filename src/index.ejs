@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The shop</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+<div class="wrapper">
+
+    <header class="header">
+
+        <img class="logo" src="img/the_shop_logo.svg" alt="">
+
+        <div class="oggetto-logo">
+            <img class="oggetto-logo__pic" src="img/oggetto_logo.svg" alt="">
+        </div>
+
+        <p class="telephone">
+            <a class="telephone__link" href="tel:+78122128506">+7(812)2<span class="telephone__padding-bottom">.</span>12<span class="telephone__padding-bottom">.</span>85<span class="telephone__padding-bottom">.</span>06</a>
+        </p>
+
+    </header>
+
+    <main class="main">
+
+        <div class="menu">
+
+            <% const navigation = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
+            <nav class="navigation">
+                <ul class="navigation__list">
+                    <% navigation.forEach(function(item) { %>
+                    <li class="navigation__item">
+                        <a href="" class="navigation__link"><%= item %></a>
+                    </li>
+                    <% }); %>
+                </ul>
+            </nav>
+
+            <form class="search-form">
+                <input class="search-form__input" type="search" name="q">
+                <input class="search-form__image" type="image"  alt="Submit" src="img/search.svg">
+            </form>
+
+        </div>
+
+        <% const breadcrumbs = ['LISP','Одежда','Футболки']%>
+        <nav class="breadcrumbs">
+            <ul class="navigation__list">
+                <% breadcrumbs.forEach(function(item){ %>
+                <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href=""><%=item%></a>
+                </li>
+                <%})%>
+            </ul>
+        </nav>
+
+        <div class="product">
+            <div class="product__pics">
+                <img class="product__pic" src="img/tshirt_white.jpg" alt="Белая футболка">
+            </div>
+            <div class="product__info">
+                <h2 class="product__title">Футболка Alien technology</h2>
+                <p class="product__description">
+                    Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.
+                </p>
+                <div class="product__price">1500 ₽</div>
+                <div class="product__sizes">
+                    <p class="product__description"> Размер:</p>
+                    <p><button class="rectangle product__size"> S </button>
+                    <button class="rectangle product__size"> M </button>
+                    <button class="rectangle product__size"> L </button></p>
+                </div>
+                <div class="product__colors">
+                    <p class="product__description"> Цвет:</p>
+                    <div class="rectangle product__color product__color_white"> </div>
+                    <div class="rectangle product__color product__color_yellow"> </div>
+                    <div class="rectangle product__color product__color_green"> </div>
+                </div>
+                <form class="button-buy">
+                    <p class="button-buy__name"><button class="button-buy__button">Купить</button></p>
+                </form>
+                <div class="postpone">
+                    <a class="postpone__link" href=""><img class="postpone__img" src="img/heart-icon.png" alt="">Отложить на потом</a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+
+        <div class="info info_padding-right">
+            <% const service = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Даставка',
+                'Способы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы'] %>
+            <h3 class="info__title">Сервис и поддержка</h3>
+            <ul class="info__list">
+                <% service.forEach(function(item) { %>
+                <li class="info__item">
+                    <a href="" class="info__link"><%= item %></a>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+
+        <div class="info info_mod-right">
+            <% const aboutCompany = ['О нас', 'Контакты', 'Вакансии',
+                'Партнерам', 'Сертификаты', 'Преимущества', 'Наши скидки'] %>
+            <h3 class="info__title">О компании</h3>
+            <ul class="info__list">
+                <% aboutCompany.forEach(function(item) { %>
+                <li class="info__item">
+                    <a href="" class="info__link"><%= item %></a>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+
+        <div class="social">
+
+            <div class="social-networks">
+                <ul class="social-networks__list">
+                    <li class="social-networks__item">
+                        <a href="" class="social-networks__link"><img class="social-networks__img" src="img/facebook.svg"></a>
+                    </li>
+                    <li class="social-networks__item">
+                        <a href="" class="social-networks__link"><img class="social-networks__img" src="img/twitter.svg"></a>
+                    </li>
+                    <li class="social-networks__item">
+                        <a href="" class="social-networks__link"><img class="social-networks__img" src="img/instagram.svg"></a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        </div>
+
+    </footer>
+
+
+
+</div>
+<!--
+<img src="img/pic.png" alt="">
+
+
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
+-->
