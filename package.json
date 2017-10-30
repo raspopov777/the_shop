@@ -20,11 +20,12 @@
     "gulp-ejs": "^3.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
-    "stylelint": "^7.13.0"
+    "stylelint": "^7.13.0",
+    "gulp-sourcemaps": "^2.6.1"
   },
   "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-less": "^3.3.0",
+    "gulp-less": "^3.3.2",
     "husky": "^0.14.3",
     "install": "^0.10.1",
     "jquery": "^3.2.1",

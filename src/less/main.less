@@ -1,6 +1,10 @@
 @import (less) '../../node_modules/normalize.css/normalize.css';
 @import (less) './_media.less';
 
+@red: #c00;
+@grey: #f2f2ed;
+@borderGrey: #d9d9d4;
+
 *{
     padding: 0;
     margin: 0;
@@ -8,13 +12,10 @@
 
 body{
     background: #fff;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
 }
 
-.font(@family: Roboto, @size: 16px, @color: black){
-    font-family: @family;
-    font-size: @size;
-    color: @color;
-}
 
 .wrapper{
     position: relative;
@@ -37,26 +38,21 @@ body{
 
 .oggetto-logo{
     position: absolute;
-    width: inherit;
-    margin: 0 auto;
+    width: 50px;
+    left: 48.4%;
     top: 20px;
-
-    &__pic{
-        width: 50px;
-    }
 }
 
 .telephone{
     position: absolute;
     right: 6.375%;
     top: 31px;
-    font-family: Roboto, sans-serif;
     font-size: 24px;
     font-weight: bold;
 
     &__link{
         text-decoration: none;
-        color: #c00;
+        color: @red;
     }
 
     &__padding-bottom{
@@ -67,16 +63,6 @@ body{
 
 
 /************************ main ***************************/
-/*
-    main
-        menu
-            navigation
-            search-form
-        breadcrumbs
-        product
-            pics
-            info
-*/
 
 .main{
     //height: 820px;
@@ -86,10 +72,9 @@ body{
 
 .menu{
     height: 50px;
-    background: #f2f2ed;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #d9d9d4;
+    background: @grey;
+    border-top: 1px solid @borderGrey;
+    border-bottom: 1px solid @borderGrey;
 }
 
 .navigation{
@@ -107,36 +92,32 @@ body{
     &__link{
         float: left;
         padding-right: 20px;
-        font-family: Roboto, sans-serif;
-        font-size: 16px;
-        color: #c00;
+        color: @red;
 
-        &:active {
-            color: #000;  /* Цвет текста при наведении курсора. */
-            text-decoration: none; /* Устранение подчёркивания ссылок. */
+        &:active{
+            color: #000;
+            text-decoration: none;
         }
     }
 }
 
 .search-form{
     position: absolute;
-    right: 6.375%;
-    top: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(217, 217, 212);
-    background-color: rgb(255, 255, 255);
     width: 253px;
     height: 38px;
+    right: 6.375%;
+    top: 5px;
+    border: 1px solid @borderGrey;
+    background-color: #fff;
 
     &__input{
         position: absolute;
-        border: none;
-        outline: none;
         width: 213px;
         height: 36px;
         left: 9px;
         top: 1px;
+        border: none;
+        outline: none;
     }
 
     &__image{
@@ -167,8 +148,8 @@ body{
     }
 
     &__link{
-        font-size: 16px;
-        font-family: Roboto, sans-serif;
+        //font-size: 16px;
+        //font-family: Roboto, sans-serif;
         color: #c00;
     }
 
@@ -188,12 +169,10 @@ body{
     //padding: 0 102px;
     padding: 0 6.375%;
     padding-bottom: 7.625%;
-    //background-color: yellow;
 
     &__pics{
         position: absolute;
         width: 43.625%;
-        //background-color: #f2f2ed;
         @media (max-width: 1200px){
             position: static;
             width: 100%;
@@ -203,6 +182,7 @@ body{
 
     &__pic{
         width: 100%;
+        //display: none;
     }
 
     &__info{
@@ -211,7 +191,6 @@ body{
         min-height: 700px;
         //margin-left: 763px;
         margin-left: 54.5779%;
-        //background-color: antiquewhite;
         @media (max-width: 1200px){
             position: static;
             width: inherit;
@@ -221,36 +200,42 @@ body{
     }
 
     &__title{
-        //font-size: 36px;
-        //font-family: Roboto;
-        //color: #000;
-        .font(Roboto, 36px, #000);
+        margin-bottom: 17px;
+        font-size: 36px;
         font-weight: bold;
+        color: #000;
     }
 
     &__description{
-        font-size: 16px;
-        font-family: Roboto, sans-serif;
         color: #000;
     }
 
     &__price{
+        margin-top: 34px;
         font-size: 36px;
-        font-family: Roboto, sans-serif;
-        color: #c00;
         font-weight: bold;
+        color: @red;
+    }
+
+    &__sizes{
+        margin-top: 38px;
     }
 
     &__size{
+        margin-top: 14px;
         font-size: 36px;
-        font-family: Roboto, sans-serif;
         background-color: #fff;
         margin-right: 10px;
     }
 
+    &__colors{
+        margin-top: 38px;
+    }
+
     &__color{
+        margin-top: 14px;
         margin-right: 10px;
-        display: inline-block;
+        //display: inline-block;
 
         &_white{
             background-color: #fffafb;
@@ -268,17 +253,15 @@ body{
 
 .rectangle{
     box-sizing: border-box;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #000;
+    border: 1px solid #000;
     width: 65px;
     height: 65px;
     outline: none;
+}
 
-    &:active{
-        border-width: 3px;
-        border-color: #c00;
-    }
+.active{                       //rectangle active
+    border-width: 3px;
+    border-color: @red;
 }
 
 .button-buy{
@@ -286,7 +269,6 @@ body{
 
     &__name{
         font-size: 30px;
-        font-family: Roboto, sans-serif;
     }
 
     &__button{
@@ -294,23 +276,21 @@ body{
         height: 79px;
         border: none;
         outline: none;
-        background-color: #c00;
+        background-color: @red;
         color: #fff;
     }
 }
 
 .postpone{
-    //background: darkorange;
     &__link{
-        font-size: 16px;
-        font-family: 'Myriad Pro Regular', sans-serif;
+        font-family: 'Myriad Pro Regular', 'Helvetica Neue', Arial, Roboto;
         color: #999;
     }
 
     &__img{
+        position: relative;
         width: 28px;
         height: 25px;
-        position: relative;
         bottom: -8px;
         padding-right: 8px;
     }
@@ -319,16 +299,15 @@ body{
 .footer{
     height: 430px;
     padding: 4.0625% 6.375%;
-    background-color: #f2f2ed;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #f2f2ed;
+    background-color: @grey;
+    border-top: 1px solid @borderGrey;
+    border-bottom: 1px solid @borderGrey;
 }
 
 .info{
     width: 370px;
     float: left;
-    background-color: #c00;
+    //background-color: @red;
 
     &_padding-right{
         padding-right: 75px;
@@ -339,11 +318,9 @@ body{
     }
 
     &__title{
-        font-size: 16px;
-        font-family: Roboto, sans-serif;
-        color: #000;
         font-weight: bold;
         line-height: 1.2;
+        color: #000;
     }
 
     &__list{
@@ -360,34 +337,11 @@ body{
 
     &__link{
         font-size: 14px;
-        font-family: Roboto, sans-serif;
-        color: #000;
         line-height: 1.714;
+        color: #000;
         text-decoration: none;
     }
 }
 
-.social{
-    width: 520px;
-    height: 200px;
-    background-color: #e3d95e;
-    float: right;
-}
-/*
-.social-networks{
 
-    &__list{
-    }
 
-    &__item{
-    }
-
-    &__link{
-
-    }
-
-    &__img{
-
-    }
-}
-*/
