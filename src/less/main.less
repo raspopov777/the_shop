@@ -297,24 +297,25 @@ body{
 }
 /************************ footer ***************************/
 .footer{
-    height: 430px;
-    padding: 4.0625% 6.375%;
+    padding: 4.0625% 6.375% 0;
     background-color: @grey;
     border-top: 1px solid @borderGrey;
     border-bottom: 1px solid @borderGrey;
 }
 
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
 .info{
-    width: 370px;
-    float: left;
+    flex-basis: 400px;
     //background-color: @red;
 
-    &_padding-right{
-        padding-right: 75px;
-    }
-
-    &_mod-right{
-        width: 320px;
+    &_width{
+        flex-basis: 350px;
     }
 
     &__title{
@@ -337,8 +338,76 @@ body{
 
     &__link{
         font-size: 14px;
-        line-height: 1.714;
+        line-height: 24px;
         color: #000;
         text-decoration: none;
+    }
+}
+
+.social-bonuses{
+    flex-basis: 330px;
+    //background-color: #e3d95e;
+    &__list{
+        list-style: none;
+    }
+
+    &__item{
+        margin-bottom: 28px;
+    }
+
+    &__item:last-child {
+        margin-bottom: 0;
+    }
+
+    &__link{
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+    &__img{
+        //background-color: yellow;
+        vertical-align: middle;
+        max-width: 45px;
+        max-height: 25px;
+        margin-right: 13px;
+    }
+}
+
+.social-networks{
+    flex-basis: 31px;
+    //background-color: darkorange;
+    &__list{
+        list-style: none;
+    }
+
+    &__item{
+        margin-bottom: 22px;
+    }
+
+    &__item:last-child {
+        margin-bottom: 0;
+    }
+
+    &__link{
+        //...
+    }
+
+    &__img{
+        max-width: 31px;
+        max-height: 31px;
+    }
+}
+
+.footer-cell{
+    margin: 65px 0;
+    padding: 35px 0;
+    width: inherit;
+    border-top: 1px solid @borderGrey;
+
+    &__text{
+        font-size: 14px;
+        line-height: 24px;
     }
 }

@@ -99,30 +99,75 @@
 
     <footer class="footer">
 
-        <div class="info info_padding-right">
-            <% const service = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Даставка',
-                'Способы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы'] %>
-            <h3 class="info__title">Сервис и поддержка</h3>
-            <ul class="info__list">
-                <% service.forEach(function(item) { %>
-                <li class="info__item">
-                    <a href="" class="info__link"><%= item %></a>
+        <div class="flex-container">
+            <div class="info">
+                <% const service = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Даставка',
+                    'Способы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы'] %>
+                <h3 class="info__title">Сервис и поддержка</h3>
+                <ul class="info__list">
+                    <% service.forEach(function(item) { %>
+                    <li class="info__item">
+                        <a href="" class="info__link"><%= item %></a>
+                    </li>
+                    <% }); %>
+                </ul>
+            </div>
+
+            <div class="info info_width">
+                <% const aboutCompany = ['О нас', 'Контакты', 'Вакансии',
+                    'Партнерам', 'Сертификаты', 'Преимущества', 'Наши скидки'] %>
+                <h3 class="info__title">О компании</h3>
+                <ul class="info__list">
+                    <% aboutCompany.forEach(function(item) { %>
+                    <li class="info__item">
+                        <a href="" class="info__link"><%= item %></a>
+                    </li>
+                    <% }); %>
+                </ul>
+            </div>
+
+            <div class="social-bonuses">
+                <ul class="social-bonuses__list">
+                    <li class="social-bonuses__item">
+                        <a class="social-bonuses__link" href="">
+                            <img  class="social-bonuses__img" src="img/delivery.svg"  alt="">бесплатная доставка от 4000 ₽
+                        </a>
                 </li>
-                <% }); %>
-            </ul>
+                    <li class="social-bonuses__item">
+                        <a class="social-bonuses__link" href="">
+                            <img  class="social-bonuses__img" src="img/samples.svg"  alt="">пробники в подарок при каждой покупке
+                        </a>
+                    </li>
+                    <li class="social-bonuses__item">
+                        <a class="social-bonuses__link" href="">
+                            <img  class="social-bonuses__img" src="img/price.svg"  alt="">акции и подарки за покупку
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="social-networks">
+                <% const networks = {
+                    'facebook.svg': 'https://www.facebook.com',
+                    'twitter.svg': 'https://twitter.com',
+                    'instagram.svg': 'https://www.instagram.com'
+                }; %>
+                <ul class="social-networks__list">
+                    <% for( let key in networks){ %>
+                    <li class="social-networks__item">
+                        <a class="social-networks__link" href="<%=networks[key] %>">
+                            <img  class="social-networks__img" src="img/<%=key %>"  alt="">
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
         </div>
 
-        <div class="info info_mod-right">
-            <% const aboutCompany = ['О нас', 'Контакты', 'Вакансии',
-                'Партнерам', 'Сертификаты', 'Преимущества', 'Наши скидки'] %>
-            <h3 class="info__title">О компании</h3>
-            <ul class="info__list">
-                <% aboutCompany.forEach(function(item) { %>
-                <li class="info__item">
-                    <a href="" class="info__link"><%= item %></a>
-                </li>
-                <% }); %>
-            </ul>
+
+        <div class="footer-cell">
+            <p class="footer-cell__text">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.<br>
+                Все права защищены. Доставка по всей России!</p>
         </div>
 
     </footer>
