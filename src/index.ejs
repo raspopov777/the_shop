@@ -12,94 +12,106 @@
 </head>
 <body>
 
-
-<div class="wrapper">
-
     <header class="header">
+        <div class="container container_header">
+            <div class="shop-logo">
+                <img class="shop-logo__img" src="img/the_shop_logo.svg" alt="">
+            </div>
+            <div class="oggetto-logo">
+                <img class="oggetto-logo__img" src="img/oggetto_logo.svg" alt="">
+            </div>
+            <div class="telephone">
+                <a class="telephone__link" href="tel:+78122128506">+7(812)2<span class="telephone__padding-bottom">.</span>12<span class="telephone__padding-bottom">.</span>85<span class="telephone__padding-bottom">.</span>06</a>
+            </div>
 
-        <img class="logo" src="img/the_shop_logo.svg" alt="">
-
-        <img class="oggetto-logo" src="img/oggetto_logo.svg" alt="">
-
-        <p class="telephone">
-            <a class="telephone__link" href="tel:+78122128506">+7(812)2<span class="telephone__padding-bottom">.</span>12<span class="telephone__padding-bottom">.</span>85<span class="telephone__padding-bottom">.</span>06</a>
-        </p>
+        </div>
 
     </header>
 
     <main class="main">
 
         <div class="menu">
+            <div class="container container_menu">
 
-            <% const navigation = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
-            <nav class="navigation">
+                <nav class="navigation">
+                    <% const navigation = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
+                    <ul class="navigation__list">
+                        <% navigation.forEach(function(item) { %>
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link"><%= item %></a>
+                        </li>
+                        <% }); %>
+                    </ul>
+                </nav>
+
+                <form class="search-form">
+                    <input class="search-form__input" type="search" name="">
+                    <input class="search-form__image" type="image"  alt="Submit" src="img/search.svg">
+                </form>
+
+            </div>
+        </div>
+
+        <div class="container">
+
+            <nav class="breadcrumbs">
+                <% const breadcrumbs = ['LISP','Одежда','Футболки']%>
                 <ul class="navigation__list">
-                    <% navigation.forEach(function(item) { %>
-                    <li class="navigation__item">
-                        <a href="#" class="navigation__link"><%= item %></a>
+                    <% breadcrumbs.forEach(function(item){ %>
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href=""><%=item%></a>
                     </li>
-                    <% }); %>
+                    <%})%>
                 </ul>
             </nav>
 
-            <form class="search-form">
-                <input class="search-form__input" type="search" name="q">
-                <input class="search-form__image" type="image"  alt="Submit" src="img/search.svg">
-            </form>
-
         </div>
-
-        <% const breadcrumbs = ['LISP','Одежда','Футболки']%>
-        <nav class="breadcrumbs">
-            <ul class="navigation__list">
-                <% breadcrumbs.forEach(function(item){ %>
-                <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href=""><%=item%></a>
-                </li>
-                <%})%>
-            </ul>
-        </nav>
 
         <div class="product">
-            <div class="product__pics">
-                <img class="product__pic" id="big" src="img/tshirt_white.jpg" alt="Белая футболка">
+            <div class="container">
+
+                <div class="product__pics">
+                    <img class="product__pic" id="big" src="img/tshirt_white.jpg" alt="Белая футболка">
+                </div>
+
+                <div class="product__info">
+                    <h2 class="product__title">Футболка Alien technology</h2>
+                    <p class="product__description">
+                        Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.
+                    </p>
+
+                    <div class="product__price">1500 ₽</div>
+                    <div class="product__sizes">
+                        <p class="product__description"> Размер:</p>
+                        <p><button class="rectangle product__size" id="size-s" onclick="size('S')"> S </button>
+                            <button class="rectangle product__size" id="size-m" onclick="size('M')"> M </button>
+                            <button class="rectangle product__size" id="size-l" onclick="size('L')"> L </button></p>
+                    </div>
+
+                    <div class="product__colors">
+                        <p class="product__description"> Цвет:</p>
+                        <button class="rectangle product__color product__color_white" id="color_w" onclick="color('white')"></button>
+                        <button class="rectangle product__color product__color_yellow" id="color_y" onclick="color('yellow')"></button>
+                        <button class="rectangle product__color product__color_green" id="color_g" onclick="color('green')"></button>
+                    </div>
+
+                    <div class="button-buy">
+                        <p class="button-buy__name"><button class="button-buy__button">Купить</button></p>
+                    </div>
+
+                    <div class="postpone">
+                        <a class="postpone__link" href=""><img class="postpone__img" src="img/heart-icon.png" alt="">Отложить на потом</a>
+                    </div>
+                </div>
+
             </div>
-            <div class="product__info">
-                <h2 class="product__title">Футболка Alien technology</h2>
-                <p class="product__description">
-                    Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.
-                </p>
-
-                <div class="product__price">1500 ₽</div>
-                <div class="product__sizes">
-                    <p class="product__description"> Размер:</p>
-                    <p><button class="rectangle product__size" id="size-s" onclick="size('S')"> S </button>
-                        <button class="rectangle product__size" id="size-m" onclick="size('M')"> M </button>
-                        <button class="rectangle product__size" id="size-l" onclick="size('L')"> L </button></p>
-                </div>
-
-                <div class="product__colors">
-                    <p class="product__description"> Цвет:</p>
-                    <button class="rectangle product__color product__color_white" id="color_w" onclick="color('white')"></button>
-                    <button class="rectangle product__color product__color_yellow" id="color_y" onclick="color('yellow')"></button>
-                    <button class="rectangle product__color product__color_green" id="color_g" onclick="color('green')"></button>
-                </div>
-
-                <div class="button-buy">
-                    <p class="button-buy__name"><button class="button-buy__button">Купить</button></p>
-                </div>
-
-                <div class="postpone">
-                    <a class="postpone__link" href=""><img class="postpone__img" src="img/heart-icon.png" alt="">Отложить на потом</a>
-                </div>
-            </div>
-
         </div>
+
     </main>
 
     <footer class="footer">
+        <div class="container container_footer">
 
-        <div class="flex-container">
             <div class="info">
                 <% const service = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Даставка',
                     'Способы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы'] %>
@@ -132,7 +144,7 @@
                         <a class="social-bonuses__link" href="">
                             <img  class="social-bonuses__img" src="img/delivery.svg"  alt="">бесплатная доставка от 4000 ₽
                         </a>
-                </li>
+                    </li>
                     <li class="social-bonuses__item">
                         <a class="social-bonuses__link" href="">
                             <img  class="social-bonuses__img" src="img/samples.svg"  alt="">пробники в подарок при каждой покупке
@@ -162,17 +174,13 @@
                     <% } %>
                 </ul>
             </div>
+            <div class="footer-cell">
+                <p class="footer-cell__text">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.<br>
+                    Все права защищены. Доставка по всей России!</p>
+            </div>
         </div>
-
-
-        <div class="footer-cell">
-            <p class="footer-cell__text">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.<br>
-                Все права защищены. Доставка по всей России!</p>
-        </div>
-
     </footer>
 
-</div>
 <script src="js/scripts.js"></script>
 </body>
 </html>
