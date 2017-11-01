@@ -1,6 +1,6 @@
 @import (less) '../../node_modules/normalize.css/normalize.css';
 @import (less) './_media.less';
-/*супер важный коммит*/
+
 @red: #c00;
 @grey: #f2f2ed;
 @borderGrey: #d9d9d4;
@@ -15,7 +15,6 @@ body{
     font-family: Roboto, sans-serif;
     font-size: 16px;
 }
-
 
 .container{
     max-width: 1600px;
@@ -221,52 +220,58 @@ body{
         font-weight: bold;
         color: @red;
     }
-
-    &__sizes{
-        margin-top: 38px;
-    }
-
-    &__size{
-        margin-top: 14px;
-        font-size: 36px;
-        background-color: #fff;
-        margin-right: 10px;
-    }
-
-    &__colors{
-        margin-top: 38px;
-    }
-
-    &__color{
-        margin-top: 14px;
-        margin-right: 10px;
-        //display: inline-block;
-
-        &_white{
-            background-color: #fffafb;
-        }
-
-        &_yellow{
-            background-color: #e3d95e;
-        }
-
-        &_green{
-            background-color: #a5af96;
-        }
-    }
 }
 
 .rectangle{
+    display: block;
     box-sizing: border-box;
     border: 1px solid #000;
     width: 65px;
     height: 65px;
-    outline: none;
+    margin-right: 10px;
+    font-size: 36px;
+    text-align: center;
+    line-height: 63px;
+
+    &_white{
+        background-color: #fffafb;
+    }
+
+    &_yellow{
+        background-color: #e3d95e;
+    }
+
+    &_green{
+        background-color: #a5af96;
+    }
 }
 
-.active{                       //rectangle active
-    border-width: 3px;
-    border-color: @red;
+.catalog{
+    margin-top: 38px;
+
+    &__description{
+        color: #000;
+        margin-bottom: 14px;
+    }
+
+    &__list{
+        list-style: none;
+        display: flex;
+    }
+
+    &__item{
+        //margin: 10px;
+    }
+
+    &__input{
+        display: none;
+
+        &:checked + .rectangle{
+            border-width: 3px;
+            border-color: @red;
+            line-height: 59px;
+        }
+    }
 }
 
 .button-buy{
@@ -373,6 +378,10 @@ body{
         max-width: 45px;
         max-height: 25px;
         margin-right: 13px;
+
+        &_transform{
+            transform: translate(10px);
+        }
     }
 }
 

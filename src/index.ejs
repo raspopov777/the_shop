@@ -80,24 +80,45 @@
                         Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.
                     </p>
 
-                    <div class="product__price">1500 ₽</div>
-                    <div class="product__sizes">
-                        <p class="product__description"> Размер:</p>
-                        <p><button class="rectangle product__size" id="size-s" onclick="size('S')"> S </button>
-                            <button class="rectangle product__size" id="size-m" onclick="size('M')"> M </button>
-                            <button class="rectangle product__size" id="size-l" onclick="size('L')"> L </button></p>
-                    </div>
+                    <form class="buy-form">
+                        <div class="product__price">1500 ₽</div>
+                        <div class="catalog">
+                            <p class="catalog__description"> Размер:</p>
 
-                    <div class="product__colors">
-                        <p class="product__description"> Цвет:</p>
-                        <button class="rectangle product__color product__color_white" id="color_w" onclick="color('white')"></button>
-                        <button class="rectangle product__color product__color_yellow" id="color_y" onclick="color('yellow')"></button>
-                        <button class="rectangle product__color product__color_green" id="color_g" onclick="color('green')"></button>
-                    </div>
+                            <ul class="catalog__list">
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="size"  id="size1"><label for="size1"  class="rectangle">S</label>
+                                </li>
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="size"  id="size2" checked><label for="size2" class="rectangle">M</label>
+                                </li>
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="size"  id="size3"><label for="size3" class="rectangle">L</label>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <div class="button-buy">
-                        <p class="button-buy__name"><button class="button-buy__button">Купить</button></p>
-                    </div>
+                        <div class="catalog">
+                            <p class="catalog__description"> Цвет:</p>
+
+                            <ul class="catalog__list">
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="color"  id="color1" checked><label for="color1" class="rectangle rectangle_white"></label>
+                                </li>
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="color"  id="color2" ><label for="color2" class="rectangle rectangle_yellow"></label>
+                                </li>
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="color"  id="color3" ><label for="color3" class="rectangle rectangle_green"></label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="button-buy">
+                            <p class="button-buy__name"><button class="button-buy__button">Купить</button></p>
+                            <!--<input type="submit" value="Отправить">-->
+                        </div>
+                    </form>
 
                     <div class="postpone">
                         <a class="postpone__link" href=""><img class="postpone__img" src="img/heart-icon.png" alt="">Отложить на потом</a>
@@ -142,17 +163,17 @@
                 <ul class="social-bonuses__list">
                     <li class="social-bonuses__item">
                         <a class="social-bonuses__link" href="">
-                            <img  class="social-bonuses__img" src="img/delivery.svg"  alt="">бесплатная доставка от 4000 ₽
+                            <img  class="social-bonuses__img" src="img/delivery.svg" alt="">бесплатная доставка от 4000 ₽
                         </a>
                     </li>
                     <li class="social-bonuses__item">
                         <a class="social-bonuses__link" href="">
-                            <img  class="social-bonuses__img" src="img/samples.svg"  alt="">пробники в подарок при каждой покупке
+                            <img  class="social-bonuses__img social-bonuses__img_transform" src="img/samples.svg"  alt="">пробники в подарок при каждой покупке
                         </a>
                     </li>
                     <li class="social-bonuses__item">
                         <a class="social-bonuses__link" href="">
-                            <img  class="social-bonuses__img" src="img/price.svg"  alt="">акции и подарки за покупку
+                            <img  class="social-bonuses__img social-bonuses__img_transform" src="img/price.svg"  alt="">акции и подарки за покупку
                         </a>
                     </li>
                 </ul>
