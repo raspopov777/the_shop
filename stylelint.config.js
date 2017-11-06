@@ -68,6 +68,7 @@ module.exports = {
         'block-closing-brace-newline-before': 'always',
         'block-no-empty': true,
         'block-opening-brace-newline-after': 'always',
+        'block-opening-brace-space-before': 'always',  //пробел перед открывающей скобкой
 
         // Selector
         'selector-attribute-brackets-space-inside': 'never',

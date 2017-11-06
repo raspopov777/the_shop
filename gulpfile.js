@@ -1,18 +1,22 @@
-const gulp = require('gulp');
-const less = require('gulp-less');
-const browserSync = require('browser-sync');
-const autoprefixer = require('gulp-autoprefixer');
-const rename       = require('gulp-rename');
-const ejs          = require('gulp-ejs');
-const gutil        = require('gulp-util');
-const sourcemaps   = require('gulp-sourcemaps');
+const gulp          = require('gulp');
+const less          = require('gulp-less');
+const browserSync   = require('browser-sync');
+const autoprefixer  = require('gulp-autoprefixer');
+const rename        = require('gulp-rename');
+const ejs           = require('gulp-ejs');
+const gutil         = require('gulp-util');
+const sourcemaps    = require('gulp-sourcemaps');
+const imagemin      = require('gulp-imagemin');
+
+//const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV ==='development';
+//const env = (process.env.NODE_ENV === 'production') ? 'production' : 'development';
+
 
 // Автоперезагрузка при изменении файлов в папке `dist`:
 // Принцип: меняем файлы в `/src`, они обрабатываются и переносятся в `dist` и срабатывает автоперезагрузка.
 // Это таск нужен только при локальной разработке.
 gulp.task('livereload', () => {
     browserSync.create();
-
     browserSync.init({
         server: {
             baseDir: 'dist'
@@ -34,6 +38,13 @@ gulp.task('styles', () => {
 
 gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
+        //.pipe((isDevelopment === 'development') || imagemin())
+        .pipe(gulp.dest('./dist/img'));
+});
+
+gulp.task('img-prod', () => {
+    gulp.src('src/img/**/*.*')
+        .pipe(imagemin())
         .pipe(gulp.dest('./dist/img'));
 });
 
@@ -59,4 +70,6 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', ['styles', 'html', 'img', 'js', 'livereload', 'watch']);
-gulp.task('prod', ['styles', 'html', 'img', 'js']);
+gulp.task('prod', ['styles', 'html', 'img-prod', 'js']);
+
+
