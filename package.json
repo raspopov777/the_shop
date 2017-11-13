@@ -8,7 +8,7 @@
     "start": "gulp",
     "dev": "gulp",
     "prod": "gulp prod",
-    "lint": "eslint src && stylelint src/less/*.less",
+    "lint": "eslint src && stylelint src/less/*.less !src/less/normalize.less",
     "precommit": "npm run lint"
   },
   "author": "Andrey Miskov",
@@ -18,15 +18,16 @@
     "eslint": "^3.19.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-ejs": "^3.0.1",
+    "gulp-imagemin": "^3.4.0",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
-    "stylelint": "^7.13.0",
-    "gulp-sourcemaps": "^2.6.1"
+    "husky": "^0.14.3",
+    "stylelint": "^7.13.0"
   },
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-less": "^3.3.2",
-    "husky": "^0.14.3",
+    "gulp-sourcemaps": "^2.6.1",
     "install": "^0.10.1",
     "jquery": "^3.2.1",
     "normalize.css": "^7.0.0"

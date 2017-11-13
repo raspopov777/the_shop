@@ -8,24 +8,25 @@
     <title>The shop</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-
+    <link rel="shortcut icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 
     <header class="header">
         <div class="container container_header">
             <div class="shop-logo">
-                <img class="shop-logo__img" src="img/the_shop_logo.svg" alt="">
+                <a class="shop-logo__link" href="/">
+                    <img class="shop-logo__img" src="img/the_shop_logo.svg" alt="">
+                </a>
             </div>
             <div class="oggetto-logo">
                 <img class="oggetto-logo__img" src="img/oggetto_logo.svg" alt="">
             </div>
             <div class="telephone">
-                <a class="telephone__link" href="tel:+78122128506">+7(812)2<span class="telephone__padding-bottom">.</span>12<span class="telephone__padding-bottom">.</span>85<span class="telephone__padding-bottom">.</span>06</a>
+                <a class="telephone__link" href="tel:+78122128506">+7(812)2&bull;12&bull;85&bull;06</a>
             </div>
-
         </div>
-
     </header>
 
     <main class="main">
@@ -33,7 +34,13 @@
         <div class="menu">
             <div class="container container_menu">
 
-                <nav class="navigation">
+                <div id="mobileMenuIcon" class="mobile-menu-icon">
+                    <div class="mobile-menu-icon__line"></div>
+                    <div class="mobile-menu-icon__line"></div>
+                    <div class="mobile-menu-icon__line"></div>
+                </div>
+
+                <nav id="navigation" class="navigation">
                     <% const navigation = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
                     <ul class="navigation__list">
                         <% navigation.forEach(function(item) { %>
@@ -53,10 +60,9 @@
         </div>
 
         <div class="container">
-
             <nav class="breadcrumbs">
                 <% const breadcrumbs = ['LISP','Одежда','Футболки']%>
-                <ul class="navigation__list">
+                <ul class="breadcrumbs__list">
                     <% breadcrumbs.forEach(function(item){ %>
                     <li class="breadcrumbs__item">
                         <a class="breadcrumbs__link" href=""><%=item%></a>
@@ -87,29 +93,34 @@
 
                             <ul class="catalog__list">
                                 <li class="catalog__item">
-                                    <input class="catalog__input" type="radio" name="size"  id="size1"><label for="size1"  class="rectangle">S</label>
+                                    <input class="catalog__input" type="radio" name="size" id="size1">
+                                    <label for="size1"  class="rectangle">S</label>
                                 </li>
                                 <li class="catalog__item">
-                                    <input class="catalog__input" type="radio" name="size"  id="size2" checked><label for="size2" class="rectangle">M</label>
+                                    <input class="catalog__input" type="radio" name="size"  id="size2" checked>
+                                    <label for="size2" class="rectangle">M</label>
                                 </li>
                                 <li class="catalog__item">
-                                    <input class="catalog__input" type="radio" name="size"  id="size3"><label for="size3" class="rectangle">L</label>
+                                    <input class="catalog__input" type="radio" name="size"  id="size3">
+                                    <label for="size3" class="rectangle">L</label>
                                 </li>
                             </ul>
                         </div>
 
                         <div class="catalog">
                             <p class="catalog__description"> Цвет:</p>
-
                             <ul class="catalog__list">
                                 <li class="catalog__item">
-                                    <input class="catalog__input" type="radio" name="color"  id="color1" checked><label for="color1" class="rectangle rectangle_white"></label>
+                                    <input class="catalog__input" type="radio" name="color"  id="color1" checked>
+                                    <label for="color1" data-color-value="white" class="rectangle rectangle_white"></label>
                                 </li>
                                 <li class="catalog__item">
-                                    <input class="catalog__input" type="radio" name="color"  id="color2" ><label for="color2" class="rectangle rectangle_yellow"></label>
+                                    <input class="catalog__input" type="radio" name="color"  id="color2" >
+                                    <label for="color2" data-color-value="yellow" class="rectangle rectangle_yellow"></label>
                                 </li>
                                 <li class="catalog__item">
-                                    <input class="catalog__input" type="radio" name="color"  id="color3" ><label for="color3" class="rectangle rectangle_green"></label>
+                                    <input class="catalog__input" type="radio" name="color"  id="color3" >
+                                    <label for="color3" data-color-value="green" class="rectangle rectangle_green"></label>
                                 </li>
                             </ul>
                         </div>
@@ -146,7 +157,7 @@
                 </ul>
             </div>
 
-            <div class="info info_width">
+            <div class="info">
                 <% const aboutCompany = ['О нас', 'Контакты', 'Вакансии',
                     'Партнерам', 'Сертификаты', 'Преимущества', 'Наши скидки'] %>
                 <h3 class="info__title">О компании</h3>
@@ -189,7 +200,7 @@
                     <% for( let key in networks){ %>
                     <li class="social-networks__item">
                         <a class="social-networks__link" href="<%=networks[key] %>">
-                            <img  class="social-networks__img" src="img/<%=key %>"  alt="">
+                            <img class="social-networks__img" src="img/<%=key %>"  alt="">
                         </a>
                     </li>
                     <% } %>
@@ -201,7 +212,6 @@
             </div>
         </div>
     </footer>
-
 <script src="js/scripts.js"></script>
 </body>
 </html>
