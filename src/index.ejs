@@ -77,7 +77,7 @@
             <div class="container">
 
                 <div class="product__pics">
-                    <img class="product__pic" id="big" src="img/tshirt_white.jpg" alt="Белая футболка">
+                    <img class="product__pic" id="productPicture" src="img/tshirt_white.jpg" alt="Белая футболка">
                 </div>
 
                 <div class="product__info">
@@ -86,41 +86,45 @@
                         Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.
                     </p>
 
-                    <form class="buy-form">
-                        <div class="product__price">1500 ₽</div>
+                    <form id="buy-form" class="buy-form">
+                        <div class="price product__price">
+                            <span id="priceVal" class="price__val">1500</span>
+                            <span class="price__currency">₽</span>
+                        </div>
+
                         <div class="catalog">
                             <p class="catalog__description"> Размер:</p>
 
-                            <ul class="catalog__list">
+                            <ul id="sizeList" class="catalog__list">
                                 <li class="catalog__item">
                                     <input class="catalog__input" type="radio" name="size" id="size1">
-                                    <label for="size1"  class="rectangle">S</label>
+                                    <label for="size1" data-type="size" data-value="s"  class="rectangle">S</label>
                                 </li>
                                 <li class="catalog__item">
                                     <input class="catalog__input" type="radio" name="size"  id="size2" checked>
-                                    <label for="size2" class="rectangle">M</label>
+                                    <label for="size2" data-type="size" data-value="m" class="rectangle">M</label>
                                 </li>
                                 <li class="catalog__item">
                                     <input class="catalog__input" type="radio" name="size"  id="size3">
-                                    <label for="size3" class="rectangle">L</label>
+                                    <label for="size3" data-type="size" data-value="l" class="rectangle">L</label>
                                 </li>
                             </ul>
                         </div>
 
                         <div class="catalog">
                             <p class="catalog__description"> Цвет:</p>
-                            <ul class="catalog__list">
+                            <ul id="colorList" class="catalog__list">
                                 <li class="catalog__item">
                                     <input class="catalog__input" type="radio" name="color"  id="color1" checked>
-                                    <label for="color1" data-color-value="white" class="rectangle rectangle_white"></label>
+                                    <label for="color1" data-type="color" data-value="white" class="rectangle rectangle_white"></label>
                                 </li>
                                 <li class="catalog__item">
                                     <input class="catalog__input" type="radio" name="color"  id="color2" >
-                                    <label for="color2" data-color-value="yellow" class="rectangle rectangle_yellow"></label>
+                                    <label for="color2" data-type="color" data-value="yellow" class="rectangle rectangle_yellow"></label>
                                 </li>
                                 <li class="catalog__item">
                                     <input class="catalog__input" type="radio" name="color"  id="color3" >
-                                    <label for="color3" data-color-value="green" class="rectangle rectangle_green"></label>
+                                    <label for="color3" data-type="color" data-value="green" class="rectangle rectangle_green"></label>
                                 </li>
                             </ul>
                         </div>
