@@ -32,10 +32,12 @@ Dispatcher.addEventListener('property-selected', ev => {
 
     if (data.type === 'color') {
         changePicture(data.value);
+        localStorage.setItem(data.type, data.value);
     }
 
     if (data.type === 'size') {
         changePrice();
+        localStorage.setItem(data.type, data.value);
     }
 });
 
@@ -47,8 +49,22 @@ function changePicture(color) {
     document.getElementById('productPicture').src = 'img/tshirt_' + color + '.jpg';
 }
 
+function presets (type) {
+    const colorValue = localStorage.getItem(type);
+    if(colorValue){
+        const els = document.getElementById(type+'List').querySelectorAll('input');
+        els.forEach(function (el) {
+            if(el.dataset['value'] === colorValue){
+                el.checked = true;
+                if(el.dataset['type']=== 'color')
+                    changePicture(colorValue);
+            }
+        });
+    }
+}
 
-
+presets('color');
+presets('size');
 
 $('#mobileMenuIcon').click(function(){
     $('#navigation').toggleClass('on');
