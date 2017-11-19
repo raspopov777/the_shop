@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The shop</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container container_header">
+            <div class="shop-logo">
+                <a class="shop-logo__link" href="/">
+                    <img class="shop-logo__img" src="img/the_shop_logo.svg" alt="">
+                </a>
+            </div>
+            <div class="oggetto-logo">
+                <img class="oggetto-logo__img" src="img/oggetto_logo.svg" alt="">
+            </div>
+            <div class="telephone">
+                <a class="telephone__link" href="tel:+78122128506">+7(812)2&bull;12&bull;85&bull;06</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <div class="menu">
+            <div class="container container_menu">
+
+                <div id="mobileMenuIcon" class="mobile-menu-icon">
+                    <div class="mobile-menu-icon__line"></div>
+                    <div class="mobile-menu-icon__line"></div>
+                    <div class="mobile-menu-icon__line"></div>
+                </div>
+
+                <nav id="navigation" class="navigation">
+                    
+                    <ul class="navigation__list">
+                        
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">LISP</a>
+                        </li>
+                        
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">OCaml</a>
+                        </li>
+                        
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">JavaScript</a>
+                        </li>
+                        
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">Python</a>
+                        </li>
+                        
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">PHP</a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+                <form class="search-form">
+                    <input class="search-form__input" type="search" name="">
+                    <input class="search-form__image" type="image"  alt="Submit" src="img/search.svg">
+                </form>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <nav class="breadcrumbs">
+                
+                <ul class="breadcrumbs__list">
+                    
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="">LISP</a>
+                    </li>
+                    
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="">Одежда</a>
+                    </li>
+                    
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="">Футболки</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="product">
+            <div class="container">
+
+                <div class="product__pics">
+                    <img class="product__pic" id="productPicture" src="img/tshirt_white.jpg" alt="Белая футболка">
+                </div>
+
+                <div class="product__info">
+                    <h2 class="product__title">Футболка Alien technology</h2>
+                    <p class="product__description">
+                        Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.
+                    </p>
+
+                    <form id="buy-form" class="buy-form">
+                        <div class="price product__price">
+                            <span id="priceVal" class="price__val">1500</span>
+                            <span class="price__currency">₽</span>
+                        </div>
+
+                        <div class="catalog">
+                            <p class="catalog__description"> Размер:</p>
+
+                            <ul id="sizeList" class="catalog__list">
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="size" data-type="size" data-value="s" id="size1">
+                                    <label for="size1"   class="rectangle">S</label>
+                                </li>
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="size" data-type="size" data-value="m"  id="size2" checked>
+                                    <label for="size2"  class="rectangle" >M</label>
+                                </li>
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="size" data-type="size" data-value="l" id="size3">
+                                    <label for="size3"  class="rectangle">L</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="catalog">
+                            <p class="catalog__description"> Цвет:</p>
+                            <ul id="colorList" class="catalog__list">
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="color" data-type="color" data-value="white" id="color1" checked>
+                                    <label for="color1"  class="rectangle rectangle_white"></label>
+                                </li>
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="color"  data-type="color" data-value="yellow" id="color2" >
+                                    <label for="color2"  class="rectangle rectangle_yellow"></label>
+                                </li>
+                                <li class="catalog__item">
+                                    <input class="catalog__input" type="radio" name="color" data-type="color" data-value="green"  id="color3" >
+                                    <label for="color3"  class="rectangle rectangle_green"></label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="button-buy">
+                            <p class="button-buy__name"><button class="button-buy__button">Купить</button></p>
+                            <!--<input type="submit" value="Отправить">-->
+                        </div>
+                    </form>
+
+                    <div class="postpone">
+                        <a class="postpone__link" href=""><img class="postpone__img" src="img/heart-icon.png" alt="">Отложить на потом</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container container_footer">
+
+            <div class="info">
+                
+                <h3 class="info__title">Сервис и поддержка</h3>
+                <ul class="info__list">
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Как сделать заказ</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Возврат товара</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Публичная оферта</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Даставка</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Способы оплаты</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Правила продажи</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Возврат денежных средств</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Вопросы и ответы</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="info">
+                
+                <h3 class="info__title">О компании</h3>
+                <ul class="info__list">
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">О нас</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Контакты</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Вакансии</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Партнерам</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Сертификаты</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Преимущества</a>
+                    </li>
+                    
+                    <li class="info__item">
+                        <a href="" class="info__link">Наши скидки</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="social-bonuses">
+                <ul class="social-bonuses__list">
+                    <li class="social-bonuses__item">
+                        <a class="social-bonuses__link" href="">
+                            <img  class="social-bonuses__img" src="img/delivery.svg" alt="">бесплатная доставка от 4000 ₽
+                        </a>
+                    </li>
+                    <li class="social-bonuses__item">
+                        <a class="social-bonuses__link" href="">
+                            <img  class="social-bonuses__img social-bonuses__img_transform" src="img/samples.svg"  alt="">пробники в подарок при каждой покупке
+                        </a>
+                    </li>
+                    <li class="social-bonuses__item">
+                        <a class="social-bonuses__link" href="">
+                            <img  class="social-bonuses__img social-bonuses__img_transform" src="img/price.svg"  alt="">акции и подарки за покупку
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="social-networks">
+                
+                <ul class="social-networks__list">
+                    
+                    <li class="social-networks__item">
+                        <a class="social-networks__link" href="https://www.facebook.com">
+                            <img class="social-networks__img" src="img/facebook.svg"  alt="">
+                        </a>
+                    </li>
+                    
+                    <li class="social-networks__item">
+                        <a class="social-networks__link" href="https://twitter.com">
+                            <img class="social-networks__img" src="img/twitter.svg"  alt="">
+                        </a>
+                    </li>
+                    
+                    <li class="social-networks__item">
+                        <a class="social-networks__link" href="https://www.instagram.com">
+                            <img class="social-networks__img" src="img/instagram.svg"  alt="">
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="footer-cell">
+                <p class="footer-cell__text">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.<br>
+                    Все права защищены. Доставка по всей России!</p>
+            </div>
+        </div>
+    </footer>
+<script src="js/scripts.js"></script>
+</body>
+</html>
+
